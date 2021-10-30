@@ -1,0 +1,118 @@
+{
+    "coins": [{
+            "id": "bitcoin",
+            "symbol": "BTC",
+            "name": "Bitcoin"
+        },
+        {
+            "id": "ethereum",
+            "symbol": "ETH",
+            "name": "Ethereum"
+        },
+        {
+            "id": "chainlink",
+            "symbol": "LINK",
+            "name": "ChainLink"
+        },
+        {
+            "id": "cardano",
+            "symbol": "ADA",
+            "name": "Cardano"
+        },
+        {
+            "id": "polkadot",
+            "symbol": "DOT",
+            "name": "Polkadot"
+        },
+        {
+            "id": "avalanche-2",
+            "symbol": "AVAX",
+            "name": "Avalanche"
+        },
+        {
+            "id": "monero",
+            "symbol": "XMR",
+            "name": "Monero"
+        },
+        {
+            "id": "stellar",
+            "symbol": "XLM",
+            "name": "Stellar"
+        },
+        {
+            "id": "vechain",
+            "symbol": "VET",
+            "name": "VeChain"
+        },
+        {
+            "id": "litecoin",
+            "symbol": "LTC",
+            "name": "Litecoin"
+        },
+        {
+            "id": "maker",
+            "symbol": "MKR",
+            "name": "Maker"
+        },
+        {
+            "id": "uniswap",
+            "symbol": "UNI",
+            "name": "Uniswap"
+        },
+        {
+            "id": "compound-governance-token",
+            "symbol": "COMP",
+            "name": "Compound"
+        },
+        {
+            "id": "celsius-degree-token",
+            "symbol": "CEL",
+            "name": "Celsius"
+        },
+        {
+            "id": "ripple",
+            "symbol": "XRP",
+            "name": "Ripple"
+        },
+        {
+            "id": "algorand",
+            "symbol": "ALGO",
+            "name": "Algorand"
+        },
+        {
+            "id": "binancecoin",
+            "symbol": "BNB",
+            "name": "Binance Coin"
+        },
+        {
+            "id": "cosmos",
+            "symbol": "ATOM",
+            "name": "Cosmos"
+        },
+        {
+            "id": "tezos",
+            "symbol": "XTZ",
+            "name": "Tezos"
+        },
+        {
+            "id": "solana",
+            "symbol": "SOL",
+            "name": "Solana"
+        },
+        {
+            "id": "matic-network",
+            "symbol": "MATIC",
+            "name": "Polygon"
+        },
+        {
+            "id": "aave",
+            "symbol": "AAVE",
+            "name": "Aave"
+        },
+        {
+            "id": "terra-luna",
+            "symbol": "LUNA",
+            "name": "Terra"
+        }
+    ]
+}
