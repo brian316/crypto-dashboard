@@ -106,7 +106,7 @@ def update_state(**kwargs):
         user_message()
     st.session_state.button_pressed = False
     st.session_state.callback = False
-    print(st.session_state)
+    # print(st.session_state)
 
 
 async def main():
@@ -123,7 +123,7 @@ async def main():
     cm = sns.color_palette("RdYlGn_r", as_cmap=True)
     for i, coin in enumerate(ids):
         with columns[i % items_per_row]:
-            st.header(coin.title())
+            st.header(coins[i]['name'].title())
             st.metric(
                 label="Price",
                 value="${:,}".format(api_data[coin]["usd"]),
@@ -144,6 +144,10 @@ async def main():
                                 cmap=cm, low=0, high=0, subset=["USD Risk"]
                             ).format({"Price": "${:,}", "USD Risk": "{:.2f}%"})
                         )
+            elif charts and charts[i] is None and st.session_state.authenticated:
+                with st.container():
+                    st.text("No Chart Data")
+                    st.markdown("<br><br>", unsafe_allow_html=True)
     # authenticate
     user_access_token = st.text_input("api_key", type="password")
     st.session_state.button_pressed = st.button(
