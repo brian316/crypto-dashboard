@@ -123,7 +123,7 @@ async def main():
     cm = sns.color_palette("RdYlGn_r", as_cmap=True)
     for i, coin in enumerate(ids):
         with columns[i % items_per_row]:
-            st.header(coins[i]['name'].title())
+            st.header(coins[i]["name"].title())
             st.metric(
                 label="Price",
                 value="${:,}".format(api_data[coin]["usd"]),
@@ -131,12 +131,14 @@ async def main():
             )
             if charts and charts[i] is not None and st.session_state.authenticated:
                 df = charts[i]
-                with st.spinner(f"Loading {coin}"):
-                    # with st.container():
+                with st.spinner(f"Loading {coin} Chart"):
                     index = max(
                         df.index[df["Price"] <= float(api_data[coin]["usd"])].tolist()
                     )
-                    st.markdown(f'Risk `{"{:.2f}%".format(df["USD Risk"][index])}`')
+                    st.markdown(
+                        f'<span style="font-family: Source Code Pro, monospace; font-size: .875rem;">Risk</span> `{"{:.2f}%".format(df["USD Risk"][index])}`',
+                        unsafe_allow_html=True,
+                    )
                     with st.expander("See Chart"):
                         df.set_index("Price", inplace=True)
                         st.dataframe(
