@@ -113,6 +113,16 @@
             "id": "terra-luna",
             "symbol": "LUNA",
             "name": "Terra"
+        },
+        {
+            "id": "anchor-protocol",
+            "symbol": "anc",
+            "name": "Anchor"
+        },
+        {
+            "id": "nexus-governance-token",
+            "symbol": "psi",
+            "name": "Nexus Governance Token"
         }
     ]
 }

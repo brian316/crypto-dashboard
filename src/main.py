@@ -123,6 +123,8 @@ async def main():
     cm = sns.color_palette("RdYlGn_r", as_cmap=True)
     for i, coin in enumerate(ids):
         with columns[i % items_per_row]:
+            if not api_data[coin]:
+                continue
             st.header(coins[i]["name"].title())
             st.metric(
                 label="Price",
