@@ -82,7 +82,7 @@ def user_message():
     elif st.session_state.user_access_token and not st.session_state.callback:
         st.error("Invalid Token")
     elif not st.session_state.callback:
-        st.warning("Please Authenticate")
+        st.warning("Please Authenticate or press 'authenticate' again")
 
 
 def update_state(**kwargs):
@@ -152,21 +152,28 @@ async def main():
                 with st.container():
                     st.text("No Chart Data")
                     st.markdown("<br><br>", unsafe_allow_html=True)
+    # show fear and greed index
+    st.sidebar.header("Fear and Greed Index")
+    st.sidebar.write(
+        '<img src="https://alternative.me/crypto/fear-and-greed-index.png" style="width:90%;" alt="Latest Crypto Fear & Greed Index" />',
+        unsafe_allow_html=True,
+    )
     # authenticate
-    user_access_token = st.text_input("api_key", type="password")
-    st.session_state.button_pressed = st.button(
-        "Authenticate",
-        on_click=lambda: update_state(
-            user_access_token=user_access_token, button_pressed=True, callback=True
-        ),
-    )  # update if successful
-    update_state()  # update the bottm message
+    with st.form(key="authenticate", clear_on_submit=False):
+        user_access_token = st.text_input("api_key", key="token", type="password")
+        st.session_state.button_pressed = st.form_submit_button(
+            "Authenticate",
+            on_click=lambda: update_state(
+                user_access_token=user_access_token, button_pressed=True, callback=True
+            ),
+        )  # update if successful
+        update_state()
 
 
 if __name__ == "__main__":
     st.set_page_config(
-        page_title="Crypto Risks",
-        page_icon=None,
+        page_title="Crypto Dashboard",
+        page_icon="📈",
         layout="centered",
         initial_sidebar_state="auto",
         menu_items=None,
