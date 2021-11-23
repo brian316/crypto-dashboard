@@ -9,6 +9,8 @@ import pandas as pd
 import seaborn as sns
 import streamlit as st
 
+from js import GOOGLE_TRENDS_SCRIPT, GREED_INDEX_SCRIPT
+
 
 async def get_risk(session, url) -> pd.DataFrame:
     async with session.get(url) as resp:
@@ -155,7 +157,12 @@ async def main():
     # show fear and greed index
     st.sidebar.header("Fear and Greed Index")
     st.sidebar.write(
-        '<img src="https://alternative.me/crypto/fear-and-greed-index.png" style="width:90%;" alt="Latest Crypto Fear & Greed Index" />',
+        GREED_INDEX_SCRIPT,
+        unsafe_allow_html=True,
+    )
+    # show google trends
+    st.sidebar.write(
+        GOOGLE_TRENDS_SCRIPT,
         unsafe_allow_html=True,
     )
     # authenticate
