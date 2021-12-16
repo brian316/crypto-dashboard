@@ -144,9 +144,10 @@ async def main():
                     with st.expander("See Chart"):
                         df.set_index("Price", inplace=True)
                         st.dataframe(
-                            df.style.background_gradient(
-                                cmap=cm, low=0, high=0, subset=["USD Risk"]
-                            ).format({"Price": "${:,}", "USD Risk": "{:.2f}%"})
+                            df,
+                            # df.style.background_gradient(
+                            #     cmap=cm, low=0, high=0, subset=["USD Risk"]
+                            # ).format({"Price": "${:,}", "USD Risk": "{:.2f}%"})
                         )
             elif charts and charts[i] is None and st.session_state.authenticated:
                 with st.container():

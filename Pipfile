@@ -6,7 +6,7 @@ name = "pypi"
 [packages]
 pre-commit = "*"
 mypy = "*"
-streamlit = "1.2.0"
+streamlit = "*"
 pandas = "*"
 aiohttp = "*"
 seaborn = "*"
